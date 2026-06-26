@@ -17,6 +17,7 @@ from ui.invoices   import InvoicesTab
 from ui.metrics    import MetricsTab
 from ui.calendar   import CalendarTab
 from ui.directory  import DirectoryTab
+from ui.outreach   import OutreachTab
 from ui.settings   import SettingsTab
 
 from engine.ai        import AIEngine
@@ -24,7 +25,7 @@ from engine.email_bot import EmailBot
 from engine.meta_bot  import MetaBot
 
 
-TAB_NAMES = ["Dashboard", "Messaging", "Calendar", "Invoices", "Metrics", "Directory", "Settings"]
+TAB_NAMES = ["Dashboard", "Messaging", "Calendar", "Invoices", "Metrics", "Directory", "Outreach", "Settings"]
 
 
 class ElHombreApp:
@@ -125,6 +126,7 @@ class ElHombreApp:
         self.invoice_tab    = InvoicesTab(self);   self.invoice_tab.build(self._tab_frames["Invoices"])
         self.metrics_tab    = MetricsTab(self);    self.metrics_tab.build(self._tab_frames["Metrics"])
         self.directory_tab  = DirectoryTab(self);  self.directory_tab.build(self._tab_frames["Directory"])
+        self.outreach_tab   = OutreachTab(self);   self.outreach_tab.build(self._tab_frames["Outreach"])
         self.settings_tab   = SettingsTab(self);   self.settings_tab.build(self._tab_frames["Settings"])
 
         self.switch_tab("Dashboard")
